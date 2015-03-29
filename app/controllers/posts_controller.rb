@@ -8,9 +8,9 @@ class PostsController < ApplicationController
       config.access_token_secret = ENV["YOUR_ACCESS_SECRET"]
     end
 
-
-    @tweets = client.user_timeline  ("michaelcleyn")
-   end
+    @user = params[:handle]
+    @tweets = client.user_timeline(@user)
+  end
 
   def new
     @post = Post.new
