@@ -46,6 +46,7 @@ GEM
     execjs (2.4.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    hashie (3.4.0)
     hike (1.2.3)
     http (0.6.3)
       http_parser.rb (~> 0.6.0)
@@ -67,6 +68,16 @@ GEM
     multi_json (1.11.0)
     multipart-post (2.0.0)
     naught (1.0.0)
+    oauth (0.4.7)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (1.0.1)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -139,6 +150,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
+  omniauth-twitter (~> 1.0.1)
   rails (= 4.1.8)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

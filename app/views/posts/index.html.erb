@@ -1,15 +1,3 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
-<p>What tweets would you like to find?</p>
-
-<form action="/tweets" method="GET">
-	<input type="text" name="handle" placeholder="What Handle?"/><br>
-	<input type="submit" value="Get Tweets"/>
-</form>
-
-<ul>
-<% @tweets.each do |t| %>
-	<li><%= t.text %></li>
-<% end  %>
-</ul>

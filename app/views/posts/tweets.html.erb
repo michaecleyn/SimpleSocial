@@ -1,1 +1,22 @@
 <h1>My tweets</h1>
+
+
+<p>What tweets would you like to find?</p>
+
+<form action="/tweets" method="GET">
+	<input type="text" name="handle" placeholder="What Handle?"/><br>
+	<input type="submit" value="Get Tweets"/>
+</form>
+
+<ul>
+	<% @tweets.each do |t| %>
+		<li><%= t.text %></li>
+	<% end  %>
+</ul>
+
+<p>What tweets would you like to post?</p>
+
+<form action="/tweets" method="POST">
+	<input type="text" name="tweet" placeholder="Tweet here"/><br>
+	<input type="submit" value="Post my Tweet"/>
+</form>

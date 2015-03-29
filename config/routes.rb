@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
   get 'posts/update'
 
-  get '/tweets' => 'posts#index'
+  get '/tweets' => 'posts#tweets'
 
-  get '/' => 'posts#index'
+  get '/' => 'posts#tweets'
+
+  post '/tweets' => 'posts#tweets'
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
