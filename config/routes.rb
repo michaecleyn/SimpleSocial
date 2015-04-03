@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
   get '/' => 'posts#tweets'
 
-  post '/tweets' => 'posts#tweets'
+  post '/send_tweet' => 'posts#send_tweet'
 
   resources :users
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

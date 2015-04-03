@@ -15,8 +15,21 @@ class PostsController < ApplicationController
     @user = params[:handle]
     @tweets = client.user_timeline(@user)
 
-    @status = params[:tweet]
+
+
     # @boom = client.update(@status)
+  end
+
+  def update_tweet
+
+    @status = params[:tweet]
+    client.update(@status)
+  end
+
+  def send_tweet
+    client.user(@user)
+       @status = params[:tweet]
+    client.update(@status)
   end
 
   def new
