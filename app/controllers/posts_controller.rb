@@ -4,31 +4,23 @@ class PostsController < ApplicationController
   end
 
   def tweets
-      client = Twitter::REST::Client.new do |config|
-    config.consumer_key    = ENV['TWITTER_KEY']
-    config.consumer_secret = ENV['TWITTER_SECRET']
-    config.access_token = ENV["YOUR_ACCESS_TOKEN"]
-    config.access_token_secret = ENV["YOUR_ACCESS_SECRET"]
-  end
-
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key    = ENV['TWITTER_KEY']
+      config.consumer_secret = ENV['TWITTER_SECRET']
+      config.access_token = ENV["YOUR_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["YOUR_ACCESS_SECRET"]
+    end
     @user = params[:handle]
     @tweets = client.user_timeline(@user)
-    # @boom = client.update(@status)
   end
-
-  # def update_tweet
-  #   @status = params[:tweet]
-  #   client.update(@status)
-  # end
 
   def send_tweet
-      client = Twitter::REST::Client.new do |config|
-    config.consumer_key    = ENV['TWITTER_KEY']
-    config.consumer_secret = ENV['TWITTER_SECRET']
-    config.access_token = ENV["YOUR_ACCESS_TOKEN"]
-    config.access_token_secret = ENV["YOUR_ACCESS_SECRET"]
-  end
-
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key    = ENV['TWITTER_KEY']
+      config.consumer_secret = ENV['TWITTER_SECRET']
+      config.access_token = ENV["YOUR_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["YOUR_ACCESS_SECRET"]
+    end
     client.user(@user)
     @status = params[:tweet]
     client.update(@status)
