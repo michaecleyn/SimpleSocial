@@ -16,7 +16,7 @@
 
 <p>What tweets would you like to post?</p>
 
-<form action="/send_tweet" method="POST">
+<%= form_tag '/send_tweet', method: :post do %>
 	<input type="text" name="tweet" placeholder="Tweet here"/><br>
 	<input type="submit" value="Post my Tweet"/>
-</form>
+<% end %>
