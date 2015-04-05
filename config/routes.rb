@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  get '/login', :to => 'sessions#new', :as => :login
+
+  match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
+
+  match '/auth/failure', to: redirect('/'), via: 'get'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/failure'
+
   get 'posts/index'
 
   get 'posts/new'
@@ -13,8 +26,6 @@ Rails.application.routes.draw do
   get '/' => 'posts#tweets'
 
   post '/send_tweet' => 'posts#send_tweet'
-
-  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.
