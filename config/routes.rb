@@ -2,14 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
-  get '/login', :to => 'sessions#new', :as => :login
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/failure'
-
   get 'posts/index'
 
   get 'posts/new'
