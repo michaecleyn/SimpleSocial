@@ -1,2 +1,4 @@
-<h1>Posts#create</h1>
-<p>Find me in app/views/posts/create.html.erb</p>
+<h3>This post from <em><%= @feed.title %></em> will be Tweeted on behalf of <em>@<%= @post.handle %></em> at some point:</h3>
+
+<p>[<%= @feed.title %>] <%= @entries[1].title %> <%= @entries[1].url %></p>
+

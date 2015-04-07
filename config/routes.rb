@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'posts/index'
-
-  get 'posts/new'
-
-  get 'posts/create'
-
-  get 'posts/update'
-
+  
   get '/tweets' => 'posts#tweets'
 
   get '/' => 'posts#tweets'
@@ -15,6 +8,10 @@ Rails.application.routes.draw do
   post '/send_tweet' => 'posts#send_tweet'
 
   resources :users
+
+  resources :feeds
+
+  resources :posts
 
 
   # The priority is based upon order of creation: first created -> highest priority.
