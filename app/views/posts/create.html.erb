@@ -1,4 +1,8 @@
 <h3>This post from <em><%= @feed.title %></em> will be Tweeted on behalf of <em>@<%= @post.handle %></em> at some point:</h3>
 
-<p>[<%= @feed.title %>] <%= @entries[1].title %> <%= @entries[1].url %></p>
+<ul>
+	<% @entries.each do |entry| %>
+		<li>[<%= @feed.title %>] <%= entry.title %> <%= entry.url %></li>
+	<% end %>
+</ul>
 
