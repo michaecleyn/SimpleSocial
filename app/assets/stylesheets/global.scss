@@ -1,0 +1,88 @@
+@import 'bootstrap';
+
+body, .jumbotron, .container {
+	background: -webkit-gradient(radial, center center, 0, center center, 1060, from(#b6eafc), to(#79c6e0));
+}
+
+.container-fluid {
+	margin-top:80px;
+}
+
+.login {
+	margin-right: 6%;
+	float: right;
+	font-size: 18px;
+	letter-spacing: 2px;
+	font-weight: 200;
+	color: #000;
+	border: 1px solid #000;
+	padding: 2px 11px 2px 11px;
+	text-decoration: none;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.login:hover {
+	background:  rgba(0, 0, 0, 0.35);
+	color:white;
+	text-decoration: none;
+}
+
+.logo {
+	font-size: 18px;
+	color: #000;
+	display: block;
+	float: left;
+	text-decoration:none;
+	font-weight: bold;
+	margin-left: 6%;
+}
+
+.jumbotron h1, h2 {
+	font-family: "ProximaNovaLight", sans-serif;
+	font-weight: 300;
+	text-align: center;
+	font-size: 40px;
+	letter-spacing: -1px;
+}
+
+h2 {
+	font-size:20px;
+	line-height:5em;
+	font-weight:100;
+	color:#444;
+}
+
+form {
+	text-align: center;
+}
+
+.email {
+	height: 30px;
+	width: 240px;
+}
+
+.notify {
+	background-color: #7fc85c;
+	border:1px solid #85B667;
+	color:#221a17;
+	font-size:17px;
+	padding:11px 81px 11px 81px;
+	margin-top:0px;
+}
+
+.notifylogin {
+	padding:11px 97px 11px 97px;
+}
+
+.notifylogin:hover {
+	background-color: #a3dd87;
+}
+
+.formlogin input {
+	margin:0px;
+}
+
+.gravatar {
+	display: block;
+	margin:0 auto;
+}

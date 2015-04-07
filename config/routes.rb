@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+
   get '/tweets' => 'posts#tweets'
 
-  get '/' => 'posts#tweets'
+  root 'posts#tweets'
 
   post '/send_tweet' => 'posts#send_tweet'
 
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
   resources :feeds
 
   resources :posts
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
