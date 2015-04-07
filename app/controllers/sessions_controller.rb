@@ -1,13 +1,13 @@
-class SessionsController < ApplicationController
-  def new
-  end
+# class SessionsController < ApplicationController
+#   def new
+#   end
 
-  def create
-  	auth_hash = request.env['omniauth.auth']
+#   def create
+#   	auth_hash = request.env['omniauth.auth']
 
-  	render :text => auth_hash.inspect
-  end
+#   	render :text => auth_hash.inspect
+#   end
 
-  def failure
-  end
-end
+#   def failure
+#   end
+# end

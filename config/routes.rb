@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+
   get '/login', :to => 'sessions#new', :as => :login
-
-  match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
-
-  match '/auth/failure', to: redirect('/'), via: 'get'
 
   get 'sessions/new'
 
@@ -23,7 +20,7 @@ Rails.application.routes.draw do
 
   get '/tweets' => 'posts#tweets'
 
-  get '/' => 'posts#tweets'
+  root 'posts#tweets'
 
   post '/send_tweet' => 'posts#send_tweet'
 

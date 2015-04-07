@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405153146) do
+ActiveRecord::Schema.define(version: 20150406235930) do
 
   create_table "posts", force: true do |t|
     t.text     "status"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150405153146) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
+    t.string   "email",                  default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
