@@ -2,20 +2,17 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
-  get 'posts/index'
-
-  get 'posts/new'
-
-  get 'posts/create'
-
-  get 'posts/update'
-
   get '/tweets' => 'posts#tweets'
 
   root 'posts#tweets'
 
   post '/send_tweet' => 'posts#send_tweet'
 
+  resources :users
+
+  resources :feeds
+
+  resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

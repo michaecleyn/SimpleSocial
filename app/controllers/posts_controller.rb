@@ -31,6 +31,11 @@ class PostsController < ApplicationController
   end
 
   def create
+    @feed = Feedjira::Feed.fetch_and_parse params[:url]
+    @entries = @feed.entries
+
+    @post = Post.new status: "#{@entries[1].title}, #{@entries[1].url}", handle: "donburi"
+    @post.save
   end
 
   def update
