@@ -3,27 +3,25 @@ class PostsController < ApplicationController
     @post = Post.all
   end
 
-  def tweets
-    client = Twitter::REST::Client.new do |config|
+  def client_method
+     client = Twitter::REST::Client.new do |config|
       config.consumer_key    = ENV['TWITTER_KEY']
       config.consumer_secret = ENV['TWITTER_SECRET']
       config.access_token = current_user.token
       config.access_token_secret = current_user.secret
     end
+  end
+
+  def tweets
     @user = params[:handle]
-    @tweets = client.user_timeline(@user)
+    @tweets = client_method.user_timeline(@user)
   end
 
   def send_tweet
-    client = Twitter::REST::Client.new do |config|
-      config.consumer_key    = ENV['TWITTER_KEY']
-      config.consumer_secret = ENV['TWITTER_SECRET']
-      config.access_token = ENV["YOUR_ACCESS_TOKEN"]
-      config.access_token_secret = ENV["YOUR_ACCESS_SECRET"]
-    end
-    client.user(@user)
+    client_method.user(@user)
     @status = params[:tweet]
-    client.update(@status)
+    client_method.update(@status)
+    redirect_to root_path
   end
 
   def new
