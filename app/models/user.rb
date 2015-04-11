@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     end
 	end
 
-  def self.find_by_twitter(auth)
+  def find_by_twitter(auth)
     #User.from_omniauth(request.env["omniauth.auth"]) ||
     user = User.find_by(provider: auth['provider'], uid: auth['uid']) ||
             User.create!(
