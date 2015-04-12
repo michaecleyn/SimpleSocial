@@ -22,6 +22,9 @@ class PostsController < ApplicationController
     @status = params[:tweet]
     client_method.update(@status)
     redirect_to root_path
+
+    post = Post.new status: @status, user_id: current_user.id
+    post.save
   end
 
   def new
