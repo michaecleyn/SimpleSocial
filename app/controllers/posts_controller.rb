@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     client_method.update(@status)
     redirect_to root_path
 
-    post = Post.new status: @status, user_id: current_user.id
+    post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     post.save
   end
 
