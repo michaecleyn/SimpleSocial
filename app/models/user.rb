@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :omniauthable, :omniauth_providers => [:twitter]
 	has_many :posts
+  has_many :urls
 
  def self.from_omniauth(auth)
     Rails.logger.info 'yooooo'
