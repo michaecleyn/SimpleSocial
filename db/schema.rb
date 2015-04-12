@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412172834) do
+ActiveRecord::Schema.define(version: 20150412185600) do
 
   create_table "posts", force: true do |t|
     t.text     "status"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150412172834) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.datetime "scheduled_at"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
@@ -31,10 +32,10 @@ ActiveRecord::Schema.define(version: 20150412172834) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "email"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
