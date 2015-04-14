@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.all
+    @post = Post.new
   end
 
   def client_method
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    u = Url.new url: "#{params[:url]}", user_id: current_user.id
+    u = Url.new url: params[:url], user_id: current_user.id
     u.save
 
     @feed = Feedjira::Feed.fetch_and_parse params[:url]
@@ -42,7 +43,6 @@ class PostsController < ApplicationController
       @post = Post.new status: "#{entry.title}, #{entry.url}", handle: "donburi"
       @post.save
     end
-
   end
 
   def update
