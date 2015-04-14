@@ -20,12 +20,13 @@ class PostsController < ApplicationController
 
   def send_tweet
     # client_method.user(@user)
-    # @status = params[:tweet]
+    @status = params[:tweet]
     # client_method.update(@status)
-    # redirect_to root_path
-
+   
     post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     post.save
+
+    redirect_to root_path
   end
 
   def new
