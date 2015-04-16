@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     @entries = @feed.entries
 
     @entries.each do |entry|
-      @post = Post.new status: "#{entry.title}, #{entry.url}", handle: "donburi"
+      @post = Post.new status: "#{entry.title}, #{entry.url}"
       @post.save
     end
   end

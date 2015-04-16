@@ -5,3 +5,9 @@ task :send_tweet => :environment do
   	
 end
 
+task :grab_feeds => :environment do
+
+  	FeedChecker.new.run
+  	
+end
+

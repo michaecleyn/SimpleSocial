@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
 	has_many :posts
   has_many :urls
 
+  # def self.url_not_nil
+  #   where self.urls != nil
+  # end
+
  def self.from_omniauth(auth)
     Rails.logger.info 'yooooo'
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
