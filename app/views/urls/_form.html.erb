@@ -1,4 +1,44 @@
 <%= form_tag do %>
 		<input type="text" name="url" placeholder="http://www.example.com/feed.rss"/><br>
 		<input type="submit" value="Save my RSS feed"/>
+
+		<div>
+			<%= label :monday, "Monday" %>
+			<%= check_box_tag 'accept' %>
+		</div>
+
+		<div>
+			<%= label :tuesday, "Tuesday" %>
+			<%= check_box_tag 'accept' %>
+		</div>
+
+		<div>
+			<%= label :wednesday, "Wednesday" %>
+			<%= check_box_tag 'accept' %>
+		</div>
+
+		<div>
+			<%= label :thursday, "Thursday" %>
+			<%= check_box_tag 'accept' %>
+		</div>
+
+		<div>
+			<%= label :friday, "Friday" %>
+			<%= check_box_tag 'accept' %>
+		</div>
+
+		<div>
+			<%= label :saturday, "Saturday" %>
+			<%= check_box_tag 'accept' %>
+		</div>
+
+		<div>
+			<%= label :sunday, "Sunday" %>
+			<%= check_box_tag 'accept' %>
+		</div>
+
+
+
 <% end %>
+
+
