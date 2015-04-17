@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412185600) do
+ActiveRecord::Schema.define(version: 20150417010833) do
 
   create_table "posts", force: true do |t|
     t.text     "status"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20150412185600) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "monday",     default: false
+    t.boolean  "tuesday",    default: false
+    t.boolean  "wednesday",  default: false
+    t.boolean  "thursday",   default: false
+    t.boolean  "friday",     default: false
+    t.boolean  "saturday",   default: false
+    t.boolean  "sunday",     default: false
   end
 
   create_table "users", force: true do |t|
