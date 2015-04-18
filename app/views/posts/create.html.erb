@@ -7,15 +7,18 @@
 <div class="row">
 	<% @entries.each do |entry| %>
 		<% if entry.published > 1.days.ago %>
+
 		  <div class="col-sm-6 col-md-4">
 		    <div class="thumbnail">
 		      <div class="caption">
 		        <h3><a href="<%= entry.url %>"><%= entry.title %></a></h3>
 		        <p><%= entry.summary %></p>
+
 		        <%= form_tag "/tweet_now", method: :post do %>
-		        <input name="status" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
-		        <p><input type="submit" class="btn btn-primary" value="Share Now"/>
+			        <input name="status" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
+			        <p><input type="submit" class="btn btn-primary" value="Share Now"/>
 				<% end %>	
+
 				<%= form_tag "/send_tweet", method: :post do %>
 			        <input name="tweet" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
 	 				<div><input type="submit" class="btn btn-default" value="Schedule"/></div>
@@ -24,11 +27,14 @@
 						<%= select_day(Time.now) %>
 						<%= select_hour(Time.now) %>
  				<% end %>
+
 		      </div>
 		    </div>
 		  </div>
+
 		<% end %>
 	<% end %>
+
 </div>
 
 </div>

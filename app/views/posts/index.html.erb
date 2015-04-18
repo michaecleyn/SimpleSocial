@@ -10,31 +10,41 @@
        <% @feed = Feedjira::Feed.fetch_and_parse url.url %>
         <% @entries = @feed.entries %>
 
-	<% @entries.each do |entry| %>
-		<% if entry.published > 1.days.ago %>
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail flex-col">
-		      <div class="caption">
-		        <h3><a href="<%= entry.url %>"><%= entry.title %></a></h3>
-		        <p><%= entry.summary %></p>
-		        <%= form_tag "/tweet_now", method: :post do %>
-		        <input name="status" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
-		        <p><input type="submit" class="btn btn-primary" value="Share Now"/></p>
-				<% end %>	
-				<%= form_tag "/send_tweet", method: :post do %>
-			        <input name="tweet" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
-	 				<p><input type="submit" class="btn btn-default" value="Schedule"/></p>
-	 					<%= select_year(Time.now) %>
-						<%= select_month(Time.now) %>
-						<%= select_day(Time.now) %>
-						<%= select_hour(Time.now) %>
- 				<% end %>
-		      </div>
-		    </div>
-		  </div>
+			<% @entries.each do |entry| %>
+				<% if entry.published > 1.days.ago %>
 
-		<% end %>
-	<% end %>
+				  <div class="col-sm-6 col-md-4">
+				    <div class="thumbnail panel panel-default flex-col">
+
+					  <div class="panel-heading">
+					  		<h3 class="panel-title"><%= @feed.title %></h3>
+					  </div>
+
+				      <div class="caption">
+
+				        <h3><a href="<%= entry.url %>"><%= entry.title %></a></h3>
+				        <p><%= entry.summary %></p>
+
+				        <%= form_tag "/tweet_now", method: :post do %>
+					        <input name="status" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
+					        <p><input type="submit" class="btn btn-primary" value="Share Now"/></p>
+						<% end %>	
+
+						<%= form_tag "/send_tweet", method: :post do %>
+					        <input name="tweet" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
+			 				<p><input type="submit" class="btn btn-default" value="Schedule"/></p>
+		 					<p><%= select_year(Time.now) %>
+							<%= select_month(Time.now) %>
+							<%= select_day(Time.now) %>
+							<%= select_hour(Time.now) %></p>
+		 				<% end %>
+
+				      </div>
+				    </div>
+				  </div>
+
+				<% end %>
+			<% end %>
 <% end %>
 
 </div>
