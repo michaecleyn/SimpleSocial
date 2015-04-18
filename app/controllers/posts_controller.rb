@@ -2,6 +2,10 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+
+    if current_user.urls != nil
+      @urls = current_user.urls
+    end
  
   end
 
