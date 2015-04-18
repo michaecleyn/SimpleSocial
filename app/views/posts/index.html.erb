@@ -1,3 +1,4 @@
+
 <div class="container">
 
 <div class="page-header">
@@ -15,12 +16,12 @@
 
 				  <div class="col-sm-6 col-md-4">
 				    <div class="thumbnail panel panel-default flex-col">
-
 					  <div class="panel-heading">
 					  		<h3 class="panel-title"><%= @feed.title %></h3>
 					  </div>
 
 				      <div class="caption">
+				      	<p><small>Published on: <%= entry.published.to_date.strftime("%B %d, %Y") %> at <%=entry.published.to_time.strftime("%I:%M%p") %></small></p>
 
 				        <h3><a href="<%= entry.url %>"><%= entry.title %></a></h3>
 				        <p><%= entry.summary %></p>
@@ -45,7 +46,7 @@
 
 				<% end %>
 			<% end %>
-<% end %>
+	<% end %>
 
 </div>
 
