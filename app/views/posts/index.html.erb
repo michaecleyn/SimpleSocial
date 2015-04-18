@@ -4,7 +4,7 @@
 <h1>Share or Schedule</h1>
 </div>
 
-<div class="row">
+<div class="row row-flex row-flex-wrap">
 
 	<% @urls.find_each do |url| %>
        <% @feed = Feedjira::Feed.fetch_and_parse url.url %>
@@ -13,7 +13,7 @@
 	<% @entries.each do |entry| %>
 		<% if entry.published > 1.days.ago %>
 		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
+		    <div class="thumbnail flex-col">
 		      <div class="caption">
 		        <h3><a href="<%= entry.url %>"><%= entry.title %></a></h3>
 		        <p><%= entry.summary %></p>
