@@ -1,8 +1,29 @@
-<h3>This post from <em><%= @feed.title %></em> will be Tweeted on behalf of <em>@<%= @post.handle %></em> at some point:</h3>
+<div class="container">
 
-<ul>
+<div class="page-header">
+<h1>wut</h1>
+</div>
+
+<div class="row">
 	<% @entries.each do |entry| %>
-		<li>[<%= @feed.title %>] <%= entry.title %> <%= entry.url %></li>
+		
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <div class="caption">
+		        <h3><a href="<%= entry.url %>"><%= entry.title %></h3>
+		        <p><%= entry.summary %></p>
+		        <%= form_tag("/tweet_now", method: "post") do %>
+		        <input name="status" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
+		        <p><input type="submit" value="Share Now"/>
+				<% end %>	
+ 				<a href="#" class="btn btn-default" role="button">Schedule</a></p>
+		      </div>
+		    </div>
+		  </div>
 	<% end %>
-</ul>
+</div>
+
+</div>
+
+
 

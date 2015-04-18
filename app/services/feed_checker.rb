@@ -1,6 +1,7 @@
 class FeedChecker
 
 	def parse_feeds(user)
+			
 		if user.urls != nil
 			urls = user.urls
 

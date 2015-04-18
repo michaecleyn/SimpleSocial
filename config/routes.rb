@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post '/send_tweet' => 'posts#send_tweet'
 
+  post '/tweet_now' => 'posts#tweet_now'
+
   resources :users
 
   resources :feeds
