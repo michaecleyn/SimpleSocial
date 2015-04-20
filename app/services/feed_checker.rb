@@ -1,6 +1,7 @@
 class FeedChecker
 
 	def parse_feeds(user)
+
 		if user.urls != nil
 			urls = user.urls
 
@@ -9,9 +10,10 @@ class FeedChecker
 	       		entries = @feed.entries
 
 		          entries.each do |entry|
-
-			            post = Post.new status: "[#{@feed.title}] #{entry.title} #{entry.url}"
+		          	if entry.published > 1.day.ago
+			            post = Post.new status: "[#{@feed.title}] #{entry.title} #{entry.url}", user_id: user.id
 			            post.save
+			        end
 		          end
 		    end
 		end
