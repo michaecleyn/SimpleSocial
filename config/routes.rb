@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
-
-  get 'home/show'
-
-  get 'dashboard/index'
-
-  get 'dashboard/show'
-
-  get 'dashboard/new'
-
   devise_for :users, controllers: {
     omniauth_callbacks: "callbacks"
   }
