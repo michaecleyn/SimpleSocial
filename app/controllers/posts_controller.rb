@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   def index
     @posts = Post.all
     @post = Post.new
@@ -7,14 +6,13 @@ class PostsController < ApplicationController
     if current_user.urls != nil
       @urls = current_user.urls
     end
- 
   end
 
   def show
   end
 
   def client_method
-      client = Twitter::REST::Client.new do |config|
+    client = Twitter::REST::Client.new do |config|
       config.consumer_key    = ENV['TWITTER_KEY']
       config.consumer_secret = ENV['TWITTER_SECRET']
       config.access_token = current_user.token
@@ -31,7 +29,7 @@ class PostsController < ApplicationController
     client_method.user(@user)
     @status = params[:status]
     client_method.update(@status)
-   
+
     # post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     # post.save
 
@@ -42,7 +40,7 @@ class PostsController < ApplicationController
     # client_method.user(@user)
     @status = params[:tweet]
     # client_method.update(@status)
-   
+
     post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     post.save
 
@@ -54,7 +52,6 @@ class PostsController < ApplicationController
   end
 
   def create
-
     @feed = Feedjira::Feed.fetch_and_parse params[:url]
     @entries = @feed.entries
 
