@@ -1,14 +1,21 @@
 class UrlsController < ApplicationController
 
+	def index
+		@urls = Url.all
+	end
+
 	def new
 		@url = Url.new
-		render 'index'
 	end
 
 	def create
-		@url = Url.new url: params[:url], user_id: current_user.id
+		@url = current_user.urls.build url_params
     @url.save
 
-    render 'index'
+	 	redirect_to  urls_path
+	end
+
+	def url_params
+		params.require(:url).permit(:url, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
 	end
 end
