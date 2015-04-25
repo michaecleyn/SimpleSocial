@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def show
   end
 
-  def client_method
+  def client
     client = Twitter::REST::Client.new do |config|
       config.consumer_key    = ENV['TWITTER_KEY']
       config.consumer_secret = ENV['TWITTER_SECRET']
@@ -22,13 +22,13 @@ class PostsController < ApplicationController
 
   def tweets
     @user = params[:handle]
-    @tweets = client_method.user_timeline(@user)
+    @tweets = client.user_timeline(@user)
   end
 
   def tweet_now
-    client_method.user(@user)
+    client.user(@user)
     @status = params[:status]
-    client_method.update(@status)
+    client.update(@status)
 
     # post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     # post.save
@@ -37,9 +37,9 @@ class PostsController < ApplicationController
   end
 
   def send_tweet
-    # client_method.user(@user)
+    # client.user(@user)
     @status = params[:tweet]
-    # client_method.update(@status)
+    # client.update(@status)
 
     post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     post.save
