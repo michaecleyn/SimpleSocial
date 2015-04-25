@@ -3,6 +3,9 @@ class DashboardsController < ApplicationController
   end
 
   def show
+  	@posts = Post.all
+  	@users = User.all
+  	@urls = Url.all
   end
 
   def new
