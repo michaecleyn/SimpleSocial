@@ -1,4 +1,3 @@
-
 class CallbacksController < Devise::OmniauthCallbacksController
   def twitter
     auth = request.env["omniauth.auth"]

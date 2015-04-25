@@ -1,24 +1,14 @@
-<!-- <div class="jumbotron">
-  <div class="container">
-    <h1>We grow your social accounts so you don't have to</h1>
-    <h2>We launch in 8 weeks. Add your email to get notified.</h2>
-  </div>
-</div>
- -->
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
-  test
 
   <div class="field">
     <%= f.label :email %><br>
