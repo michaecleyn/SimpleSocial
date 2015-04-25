@@ -1,0 +1,13 @@
+<%= form_for @url do |f| %>
+	<%= f.label :url %>
+	<%= f.text_field :url, placeholder: "Feed"%>
+	<%= f.submit %>
+
+	<% ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].each do |dow| %>
+		<div>
+			<%= f.label dow, dow.titleize %>
+			<%= f.check_box dow %>
+		</div>
+	<% end %>
+<% end %>
+
