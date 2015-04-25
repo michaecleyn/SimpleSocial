@@ -45,13 +45,6 @@ body, .jumbotron, .container {
 	letter-spacing: -1px;
 }
 
-h2 {
-	font-size:20px;
-	line-height:5em;
-	font-weight:100;
-	color:#444;
-}
-
 form {
 	text-align: center;
 }
@@ -87,7 +80,7 @@ form {
 	margin:0 auto;
 }
 
-.row-flex, .row-flex > div[class*='col-'] {  
+.row-flex, .row-flex > div[class*='col-'] {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
