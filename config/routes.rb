@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
+  get 'home/show'
+
   get 'dashboard/index'
 
   get 'dashboard/show'
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/tweets' => 'posts#tweets'
 
-  root 'posts#tweets'
+  root 'home#show'
 
   post '/send_tweet' => 'posts#send_tweet'
 
