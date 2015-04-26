@@ -9,9 +9,11 @@ class UrlsController < ApplicationController
 
 	def create
 		@url = current_user.urls.build url_params
-    @url.save
+    	@url.save
 
-	 	redirect_to  urls_path
+    	flash[:notice] = "Feed successfully saved"
+
+	 	redirect_to action: "new"
 	end
 
 	def url_params
@@ -28,6 +30,8 @@ class UrlsController < ApplicationController
 		url = Url.find(params[:id])
 		url.update(url_params)
 		url.save
+
+		flash[:notice] = "Feed settings successfully updated"
 
 		redirect_to action: "new"
 	end
