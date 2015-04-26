@@ -42,6 +42,5 @@ class User < ActiveRecord::Base
     #     uid: auth['uid'],
     #     name: auth['info']['name']
     #   )
-
   end
 end

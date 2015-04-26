@@ -1,12 +1,13 @@
 <div class="container">
 	<p class="welcomename"><%= "Welcome, #{current_user.name}"%></p>
 	<div class="col-md-4">
-		<strong>Current Scheduled Tweets</strong>
-		<% @posts.each do |post| %>
-					<p><%= post.status %></p>
-					<p><%= post.scheduled_at %></p>
-		<% end %>
-		<a href="/urls/new">Schedule More</a>
+		<strong>Upcoming Scheduled Tweets</strong>
+		<ul>
+			<% current_user.posts.order(scheduled_at: :desc).limit(5).each do |post| %>
+				<li><%= post.status %></li>
+			<% end %>
+		</ul>
+		<%= link_to "Schedule More", posts_path %>
 	</div>
 
 	<div class="col-md-4">
@@ -17,7 +18,3 @@
 		<a href="/urls/new">Add More</a>
 	</div>
 </div>
-
-
-
-

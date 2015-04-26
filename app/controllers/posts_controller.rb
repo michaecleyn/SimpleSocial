@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     post.save
 
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def new
