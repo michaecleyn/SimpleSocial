@@ -1,0 +1,60 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+   }
+
+
+.wrapper {
+	width:86%;
+	/*border:1px solid black;*/
+	margin:0 auto;
+	clear:both;
+}
+
+.field {
+	/*border:1px solid green;*/
+	width: 50%;
+	margin-top: 100px;
+	float:left;
+	text-align: center;
+}
+
+.analytics {
+	/*border:1px solid black;*/
+	width:50%;
+	float:left;
+	margin-top: 100px;
+	text-align: center;
+}
+
+.field1 {
+	color:#fff;
+	padding:30px 80px 30px 80px;
+	background-color: #e74c3c;
+	transition:1s all;
+}
+
+.field1:hover {
+	background-color: #D01401;
+	text-decoration: none;
+}
+
+h2 {
+	font-size:20px;
+	line-height:5em;
+	font-weight:100;
+	color:#444;
+	margin-top:50px;
+}

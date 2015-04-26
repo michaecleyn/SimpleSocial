@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/tweets' => 'posts#tweets'
 
-  root 'posts#tweets'
+  root 'home#show'
 
   post '/send_tweet' => 'posts#send_tweet'
 
@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :posts
 
   resources :urls
+
+  resource :dashboard
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
