@@ -1,4 +1,5 @@
 <div class="container">
+	<p class="welcomename"><%= "Welcome, #{current_user.name}"%></p>
 	<div class="col-md-4">
 		<strong>Current Scheduled Tweets</strong>
 		<% @posts.each do |post| %>
