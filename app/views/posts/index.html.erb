@@ -7,7 +7,7 @@
 	       <% @feed = Feedjira::Feed.fetch_and_parse url.url %>
 	        <% @entries = @feed.entries %>
 
-					<% entries.each do |entry| %>
+					<% @entries.each do |entry| %>
 						<% if entry.published > 1.days.ago %>
 
 					  <div class="col-sm-6 col-md-4">
