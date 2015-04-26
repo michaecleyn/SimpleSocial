@@ -5,7 +5,7 @@
 	  		<% if user_signed_in? %>
 	  			<%= link_to "Log Out", destroy_user_session_path, class: "login" %>
 	  			<% else %>
-	  			<%= link_to "Log In", new_user_session_path, class: "login" %>
+	  			<%= link_to "Log In", dashboard_path, class: "login" %>
 	  		<% end %>
 	  </div>
 	</nav>
