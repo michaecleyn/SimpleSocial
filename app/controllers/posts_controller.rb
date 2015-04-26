@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:status, :scheduled_date)
+    params.require(:post).permit(:status, :scheduled_at)
   end
 
   def update
