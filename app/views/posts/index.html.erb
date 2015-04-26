@@ -24,17 +24,23 @@
 
 					        <%= form_tag "/tweet_now", method: :post do %>
 						        <input name="status" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
-						        <input type="submit" class="btn btn-primary" value="Share Now"/>
-									<% end %>
 
+						        <div>
+							        <input type="submit" class="btn btn-primary" value="Share Now"/>
+										<% end %>
+								</div>
+								
 									<%= form_tag "/send_tweet", method: :post do %>
-						        <input name="tweet" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
+						        		<input name="tweet" type="hidden" value="<%= entry.title %> <%= entry.url %>" />
 				 						<input type="submit" class="btn btn-default" value="Schedule"/>
+
+				 				<div>		
 					 					<%= select_year(Time.now) %>
 										<%= select_month(Time.now) %>
 										<%= select_day(Time.now) %>
 										<%= select_hour(Time.now) %>
 			 						<% end %>
+			 					</div>
 					      </div>
 					    </div>
 					  </div>

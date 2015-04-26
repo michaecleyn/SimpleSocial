@@ -1,18 +1,14 @@
-<%= form_for Url.find(params[:id]) do |f| %>
-	<tr>
-		<td>
-			<%= f.label :url %>
-			<%= f.text_field :url, placeholder: "Feed"%>
-		</td>
-	
+<%= bootstrap_form_for Url.find(params[:id]) do |f| %>
 
+	<%= f.text_field :url, placeholder: "Feed", skip_label: true %>
+
+	<tr>
 		<% ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].each do |dow| %>
 
 			<td>
-				<%= f.label dow, dow.titleize %>
 				<%= f.check_box dow %>
 			</td>
 		<% end %>
-		<td><%= f.submit %></td>
+		<td><%= f.submit "Update Feed", class: "btn btn-success" %></td>
 	</tr>
 <% end %>
