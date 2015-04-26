@@ -1,1 +1,11 @@
-details of the urls
+	<% url = Url.find(params[:id]) %>
+		<tr>
+			<td><%= url.url %></td>
+			<td><%= url.monday %></td>
+			<td><%= url.tuesday %></td>
+			<td><%= url.wednesday %></td>
+			<td><%= url.thursday %></td>
+			<td><%= url.friday %></td>
+			<td><%= url.saturday %></td>
+			<td><%= url.sunday %></td>
+		</tr>

@@ -17,4 +17,18 @@ class UrlsController < ApplicationController
 	def url_params
 		params.require(:url).permit(:url, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
 	end
+
+	def show
+	end
+
+	def edit
+	end
+
+	def update
+		url = Url.find(params[:id])
+		url.update(url_params)
+		url.save
+
+		redirect_to action: "new"
+	end
 end
