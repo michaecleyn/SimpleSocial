@@ -61,6 +61,18 @@ class PostsController < ApplicationController
     # end
   end
 
+  def post_params
+    params.require(:post).permit(:status, :scheduled_date)
+  end
+
   def update
+    post = Post.find(params[:id])
+    post.update(post_params)
+    post.save
+
+    redirect_to dashboard_path
+  end
+
+  def edit
   end
 end

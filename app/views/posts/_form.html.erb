@@ -1,4 +1,9 @@
-<%= form_tag do %>
-		<input type="text" name="url" placeholder="http://www.example.com/feed.rss"/><br>
-		<input type="submit" value="Save my RSS feed"/>
+<%= form_for Post.find(params[:id]) do |f| %>
+	<%= f.label :status %>
+	<%= f.text_field :status %>
+
+	<%= f.label :scheduled_at %>
+	<%= f.text_field :scheduled_at %>
+
+	<%= f.submit "submit" %>
 <% end %>
