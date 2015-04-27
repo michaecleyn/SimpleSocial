@@ -1,13 +1,17 @@
 
 <div class="container">
 
-	<h1>Editing Feed</h1>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Edit Feed Options</h3>
+		</div>
 
-	<table class="table table-hover">
-		<%= render 'form' %>
-	</table>
+ 	<div class="panel-body">
 
-	<%= link_to 'Show', @url %> |
-	<%= link_to 'Back', urls_path %>
+		<table class="table table-hover">
+			<%= render 'form' %>
+		</table>
+
+	</div>
 
 </div>
