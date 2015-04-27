@@ -6,9 +6,9 @@ task :send_tweet => :environment do
   	
 end
 
-desc "I grab new feeds."
+desc "I grab new posts."
 
-task :grab_feeds => :environment do
+task :grab_posts => :environment do
 
   	FeedChecker.new.run
   	
