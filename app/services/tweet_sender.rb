@@ -1,5 +1,4 @@
-class TweetSender 
-
+class TweetSender
 	def client(user)
      client = Twitter::REST::Client.new do |config|
       config.consumer_key    = ENV['TWITTER_KEY']
@@ -9,9 +8,9 @@ class TweetSender
     end
   end
 
-  	def run
-  		Post.scheduled_now.includes(:user).find_each do |post|
-  			client(post.user).update(post.status) 
-  		end
-  	end
+	def run
+		Post.scheduled_now.includes(:user).find_each do |post|
+			client(post.user).update(post.status)
+		end
+	end
 end
