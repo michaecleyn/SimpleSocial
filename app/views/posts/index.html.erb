@@ -35,10 +35,8 @@
 				 						<input type="submit" class="btn btn-default" value="Schedule"/>
 
 				 				<div>		
-					 					<%= select_year(Time.now) %>
-										<%= select_month(Time.now) %>
-										<%= select_day(Time.now) %>
-										<%= select_hour(Time.now) %>
+					 					<%= render 'layouts/datepicker' %>
+										
 			 						<% end %>
 			 					</div>
 					      </div>

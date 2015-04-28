@@ -16,10 +16,5 @@
 <%= form_tag '/send_tweet', method: :post do %>
 	<input type="text" name="tweet" placeholder="Tweet here"/><br>
 	<input type="submit" value="Post my Tweet"/>
-	<input id="datetimepicker" type="text" name="date" placeholder="Click here to choose a time">
-	<script>
-		$(function(){
-  			jQuery('#datetimepicker').datetimepicker();
-		});
-	</script>
+	<%= render 'layouts/datepicker' %>
 <% end %>
