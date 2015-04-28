@@ -3,8 +3,7 @@ class Post < ActiveRecord::Base
 	belongs_to :user
 
 	def scheduled_date=(date)
-		time = DateTime.civil(date[:year].to_i, date[:month].to_i, date[:day].to_i, date[:hour].to_i)
-		self.scheduled_at = time
+		self.scheduled_at = date
 	end
 
 	def self.scheduled_now

@@ -38,6 +38,8 @@ gem 'omniauth-twitter', '~> 1.0.1'
 
 gem 'devise'
 
+gem 'jquery-datetimepicker-rails'
+
 gem 'bootstrap-sass'
 
 gem 'bootstrap_form'
