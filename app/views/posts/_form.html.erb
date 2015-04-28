@@ -3,7 +3,13 @@
 	<%= f.text_field :status %>
 
 	<%= f.label :scheduled_at %>
-	<%= f.text_field :scheduled_at %>
+	<%= f.text_field :scheduled_at, class: "datetimepicker" %>
 
 	<%= f.submit "submit" %>
 <% end %>
+
+<script>
+		$(function(){
+  			jQuery('.datetimepicker').datetimepicker();
+		});
+</script>
