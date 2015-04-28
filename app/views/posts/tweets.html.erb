@@ -16,8 +16,10 @@
 <%= form_tag '/send_tweet', method: :post do %>
 	<input type="text" name="tweet" placeholder="Tweet here"/><br>
 	<input type="submit" value="Post my Tweet"/>
-	<%= select_year(Time.now) %>
-	<%= select_month(Time.now) %>
-	<%= select_day(Time.now) %>
-	<%= select_hour(Time.now) %>
+	<input id="datetimepicker" type="text" name="date" placeholder="Click here to choose a time">
+	<script>
+		$(function(){
+  			jQuery('#datetimepicker').datetimepicker();
+		});
+	</script>
 <% end %>
