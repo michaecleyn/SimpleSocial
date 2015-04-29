@@ -5,3 +5,21 @@
 h2 {
 	text-align: center;
 }
+
+.twitterlogin {
+  display: inline-block;
+  padding: 18px 26px 18px 26px;
+  background-color: #4099FF;
+  color: white;
+  transition:0.5s all;
+  text-transform: uppercase;
+}
+
+.twitterlogin:hover {
+	background-color: #2F77C8;
+	text-decoration: none;
+}
+
+.signup {
+	margin-top:15px;
+}
