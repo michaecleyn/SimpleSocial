@@ -12,18 +12,12 @@ body, .jumbotron, .container {
 	margin-right: 6%;
 	float: right;
 	font-size: 18px;
-	letter-spacing: 2px;
 	font-weight: 200;
 	color: #000;
-	border: 1px solid #000;
-	padding: 2px 11px 2px 11px;
 	text-decoration: none;
-	background: rgba(0, 0, 0, 0.1);
 }
 
 .login:hover {
-	background:  rgba(0, 0, 0, 0.35);
-	color:white;
 	text-decoration: none;
 }
 
@@ -37,14 +31,6 @@ body, .jumbotron, .container {
 	margin-left: 6%;
 }
 
-.jumbotron h1, h2 {
-	font-family: "ProximaNovaLight", sans-serif;
-	font-weight: 300;
-	text-align: center;
-	font-size: 40px;
-	letter-spacing: -1px;
-}
-
 form {
 	text-align: center;
 }
@@ -54,22 +40,22 @@ form {
 	width: 240px;
 }
 
-.notify {
+/*.notify {
 	background-color: #7fc85c;
 	border:1px solid #85B667;
 	color:#221a17;
 	font-size:17px;
 	padding:11px 81px 11px 81px;
 	margin-top:0px;
-}
+}*/
 
 .notifylogin {
 	padding:11px 97px 11px 97px;
 }
 
-.notifylogin:hover {
+/*.notifylogin:hover {
 	background-color: #a3dd87;
-}
+}*/
 
 .formlogin input {
 	margin:0px;

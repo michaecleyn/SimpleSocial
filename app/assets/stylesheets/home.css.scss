@@ -7,13 +7,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-   }
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+}
 
 
 .wrapper {
@@ -42,12 +42,15 @@
 .field1 {
 	color:#fff;
 	padding:30px 80px 30px 80px;
-	background-color: #e74c3c;
+	background-color: #f39c12;
 	transition:1s all;
+	text-transform:uppercase;
+	font-size:15px;
+	font-weight:500;
 }
 
 .field1:hover {
-	background-color: #D01401;
+	background-color: #e67e22;
 	text-decoration: none;
 }
 
