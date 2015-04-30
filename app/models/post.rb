@@ -9,4 +9,9 @@ class Post < ActiveRecord::Base
 	def self.scheduled_now
 		where scheduled_at: Time.now.beginning_of_hour
 	end
+
+	def time_now
+    moment = Time.now.utc
+    moment.localtime
+  end
 end
