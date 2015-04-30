@@ -4,6 +4,7 @@
 	  		<%= link_to "Simple Social", root_path, class: "logo" %>
 	  		<% if user_signed_in? %>
 	  			<%= link_to "Log Out", destroy_user_session_path, class: "login" %>
+	  			<%= link_to "Dashboard", dashboard_path, class: "login" %>
 	  			<% else %>
 	  			<%= link_to "Log In", dashboard_path, class: "login" %>
 	  		<% end %>
