@@ -1,22 +1,37 @@
 <div class="container">
 	<p class="welcomename"><%= "Welcome, #{current_user.name}"%></p>
+
 	<div class="col-md-6">
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h3 class="panel-title">Upcoming Scheduled Tweets</h3>
 			</div>
-
 			<div class="panel-body">
 				<table class="table table-hover"
 					<% current_user.posts.order(scheduled_at: :desc).limit(5).each do |post| %>
 						<tr>
 							<td><%= post.status %></td>
+							<td><%= post.scheduled_at %></td>
 							<td><%= link_to "Edit", edit_post_path(post) %></td>
 						</tr>
 					<% end %>
 				</table>
+				<%= link_to "Schedule More", posts_path %>
 			</div>
-			<%= link_to "Schedule More", posts_path %>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">What blogs do you read?</h3></br>
+			</div>
+			<div class="panel-body">
+				<table class="table table-hover">
+
+					<tr><a href="/urls/new">Add Blog</a></tr>
+				</table>
+			</div>
 		</div>
 	</div>
 
@@ -25,7 +40,6 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">Current Favourite Sites</h3></br>
 			</div>
-
 			<div class="panel-body">
 				<table class="table table-hover">
 					<% @urls.each do |url| %>
