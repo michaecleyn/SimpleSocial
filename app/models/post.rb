@@ -3,7 +3,9 @@ class Post < ActiveRecord::Base
 	belongs_to :user
 
 	def scheduled_date=(date)
-		self.scheduled_at = Time.zone.parse(date)
+		ltime = Time.parse(date)
+
+		self.scheduled_at = ltime.utc
 	end
 
 	def self.scheduled_now
