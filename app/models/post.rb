@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 	end
 
 	def self.scheduled_now
-		where scheduled_at: Time.now.beginning_of_hour
+		where scheduled_at: Time.zone.now.beginning_of_hour
 	end
 
 	def time_now
