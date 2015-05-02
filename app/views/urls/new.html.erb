@@ -7,15 +7,17 @@
 		<div class="col-md-6">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-    				<h3 class="panel-title">Add a New Feed</h3>
+    				<h3 class="panel-title">Add a New Website Feed</h3>
   			</div>
  			 	<div class="panel-body">
 					<%= bootstrap_form_for @url do |f| %>
 						<%= f.text_field :url, placeholder: "Enter a valid RSS feed", skip_label: true %>
-						<%= f.submit "Save Feed", class: "btn btn-primary" %>
 						<% ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].each do |dow| %>
+						<div class="col-md-3">
 							<%= f.check_box dow %>
+						</div>
 						<% end %>
+						<%= f.submit "Save Feed", class: "btn btn-primary" %>
 					<% end %>
 				</div>
 			</div>
@@ -24,7 +26,7 @@
 			<div class="col-md-6">
 				<div class="panel panel-info">
 				<div class="panel-heading">
-    				<h3 class="panel-title">Your Saved Feeds</h3>
+    				<h3 class="panel-title">Your Saved Website Feeds</h3>
   			</div>
 
  			 	<div class="panel-body">
@@ -33,7 +35,7 @@
 					<% current_user.urls.each do |url| %>
 					<tr>
 						<td><%= url.url %></td>
-						<td><%= link_to 'Modify', edit_url_path(url) %></td>
+						<td><%= link_to 'Schedule', edit_url_path(url) %></td>
 					</tr>
 					<% end %>
 				</table>

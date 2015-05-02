@@ -1,5 +1,27 @@
 <div class="container">
+
 	<p class="welcomename"><%= "Welcome, #{current_user.name}"%></p>
+
+	<div class="col-md-12">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<% if current_user.urls == nil? %>
+					<h3 class="panel-title">Step 1: Add a blog or website that you read a lot</h3>
+					<% else %>
+					<h3 class="panel-title">What Blogs Are You Reading Lately?</h3>
+				<% end %>
+			</div>
+			<div class="panel-body">
+				<table class="table table-hover">
+					<% if current_user.urls == nil? %>
+						<tr><a href="/urls/new">Add Your First Blog</a></tr>
+					<% else %>
+						<tr><a href="/urls/new">Add Them Here</a></tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	</div>
 
 	<div class="col-md-6">
 		<div class="panel panel-info">
@@ -7,12 +29,13 @@
 				<h3 class="panel-title">Upcoming Scheduled Tweets</h3>
 			</div>
 			<div class="panel-body">
-				<table class="table table-hover"
+				<table class="table table-hover">
 					<% current_user.posts.order(scheduled_at: :desc).limit(5).each do |post| %>
 						<tr>
 							<td><%= post.status %></td>
 							<td><%= post.scheduled_at.localtime.strftime("%B, %d, %I:%M %p") %></td>
 							<td><%= link_to "Edit", edit_post_path(post) %></td>
+							<td><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></td>
 						</tr>
 					<% end %>
 				</table>
@@ -24,21 +47,7 @@
 	<div class="col-md-6">
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<h3 class="panel-title">What blogs do you read?</h3></br>
-			</div>
-			<div class="panel-body">
-				<table class="table table-hover">
-
-					<tr><a href="/urls/new">Add Blog</a></tr>
-				</table>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-6">
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h3 class="panel-title">Current Favourite Sites</h3></br>
+				<h3 class="panel-title">Current Favourite Sites</h3>
 			</div>
 			<div class="panel-body">
 				<table class="table table-hover">
