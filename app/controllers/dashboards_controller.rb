@@ -10,6 +10,5 @@ class DashboardsController < ApplicationController
   end
 
   def new
-    @user = User.urls
   end
 end
