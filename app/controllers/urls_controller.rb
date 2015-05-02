@@ -28,6 +28,12 @@ class UrlsController < ApplicationController
 	def edit
 	end
 
+	def destroy
+		@url = Url.find(params[:id])
+		@url.destroy
+		redirect_to dashboard_path
+	end
+
 	def update
 		url = Url.find(params[:id])
 		url.update(url_params)
