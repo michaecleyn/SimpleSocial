@@ -1,6 +1,6 @@
 class UrlsController < ApplicationController
 	before_action :authenticate_user!
-	
+
 	def index
 		@urls = Url.all
 	end
@@ -26,6 +26,12 @@ class UrlsController < ApplicationController
 	end
 
 	def edit
+	end
+
+	def destroy
+		@url = Url.find(params[:id])
+		@url.destroy
+		redirect_to dashboard_path
 	end
 
 	def update
