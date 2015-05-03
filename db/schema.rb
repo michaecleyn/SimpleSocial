@@ -37,13 +37,16 @@ ActiveRecord::Schema.define(version: 20150503014820) do
     t.boolean  "friday",     default: false
     t.boolean  "saturday",   default: false
     t.boolean  "sunday",     default: false
+    t.integer  "post_id_id"
   end
 
+  add_index "urls", ["post_id_id"], name: "index_urls_on_post_id_id"
+
   create_table "users", force: true do |t|
-    t.string   "email"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email",                  default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
