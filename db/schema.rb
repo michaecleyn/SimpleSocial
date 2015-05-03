@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417010833) do
+ActiveRecord::Schema.define(version: 20150503014820) do
 
   create_table "posts", force: true do |t|
     t.text     "status"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150417010833) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.datetime "scheduled_at"
+    t.boolean  "sent",         default: false
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"

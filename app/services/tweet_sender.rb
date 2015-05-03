@@ -11,6 +11,7 @@ class TweetSender
 	def run
 		Post.scheduled_now.includes(:user).find_each do |post|
 			client(post.user).update(post.status)
+			post.update(sent: true)
 		end
 	end
 end
