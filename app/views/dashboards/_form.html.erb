@@ -72,4 +72,26 @@
 			</div>
 		</div>
 	</div>
-</div> <!-- container -->
+
+
+	<div class="col-md-6">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Compose your own tweet</h3>
+			</div>
+			<div class="panel-body">
+					<%= form_tag '/send_tweet', method: :post do %>
+						<textarea class="form-control" name="tweet" rows="3" id="comment" placeholder="Compose your scheduled tweet."/></textarea><br>
+						<div class="col-lg-5">
+							<%= render 'layouts/datepicker' %>
+						</div>
+						<div class="col-lg-4">
+							<input type="submit" class="btn btn-info" value="Schedule my Tweet"/>
+						</div>
+					</div>
+					<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
