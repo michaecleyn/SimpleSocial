@@ -5,7 +5,7 @@
 	<div class="col-md-12">
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<% if current_user.urls.nil? %>
+				<% if current_user.urls.blank? %>
 					<h3 class="panel-title">Step 1: Add a blog or website that you read a lot</h3>
 					<% else %>
 					<h3 class="panel-title">What Blogs Are You Reading Lately?</h3>
@@ -13,7 +13,7 @@
 			</div>
 			<div class="panel-body">
 				<table class="table table-hover">
-					<% if current_user.urls == nil? %>
+					<% if current_user.urls.blank? %>
 						<tr><a href="/urls/new">Add Your First Blog</a></tr>
 					<% else %>
 						<tr><a href="/urls/new">Add Them Here</a></tr>

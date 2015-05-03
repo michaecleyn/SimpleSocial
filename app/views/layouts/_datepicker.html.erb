@@ -1,6 +1,12 @@
 <input class="datetimepicker" type="text" name="date" placeholder="Click here to choose a time">
 	<script>
 		$(function(){
-  			jQuery('.datetimepicker').datetimepicker();
+  			jQuery('.datetimepicker').datetimepicker({
+		  		onClose:function(dp,$input){
+    				if ($input.val().length > 0) {
+    					$input.closest("form").submit()
+    				}
+  				}
+  			});
 		});
 	</script>
