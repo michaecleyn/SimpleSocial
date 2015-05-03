@@ -56,14 +56,18 @@
 			</div>
 			<div class="panel-body">
 				<table class="table table-hover">
-					<% @urls.each do |url| %>
-						<tr>
-							<td><p><%= url.url %></p></td>
-							<td><%= link_to "Edit", edit_url_path(url) %></td>
-							<td><%= link_to "Delete", url_path(url), method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %></td>
-						</tr>
+					<% if current_user.urls.count == 0 %>
+						<h4>Your favourite sites will be listed here.. once you add some!</h4>
+					<% else %>
+						<% @urls.each do |url| %>
+							<tr>
+								<td><p><%= url.url %></p></td>
+								<td><%= link_to "Edit", edit_url_path(url) %></td>
+								<td><%= link_to "Delete", url_path(url), method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %></td>
+							</tr>
+						<% end %>
 					<% end %>
-					<tr><a href="/urls/new">Add More</a></tr>
+					<tr><a href="/urls/new">Add more favourite sites</a></tr>
 				</table>
 			</div>
 		</div>
