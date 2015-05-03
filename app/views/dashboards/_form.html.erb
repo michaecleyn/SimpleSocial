@@ -33,7 +33,7 @@
 					<% if current_user.posts.count == 0%>
 						<h4>Your upcoming scheduled tweets will appear.. once you schedule some!</h4>
 					<% else %>
-						<% current_user.posts.order(scheduled_at: :desc).limit(5).each do |post| %>
+						<% current_user.posts.where(sent: false).order(scheduled_at: :asc).limit(5).each do |post| %>
 							<tr>
 								<td><%= post.status %></td>
 								<td><%= post.scheduled_at.localtime.strftime("%B, %d, %I:%M %p") %></td>
