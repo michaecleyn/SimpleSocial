@@ -1,5 +1,9 @@
 <div class="container">
 
+	<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+  <% end %>
+
 	<p class="welcomename"><%= "Welcome, #{current_user.name}"%></p>
 
 	<div class="col-md-12">
