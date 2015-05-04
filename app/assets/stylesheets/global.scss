@@ -11,10 +11,12 @@ body, .jumbotron, .container {
 .login {
 	margin-right:2%;
 	float: right;
-	font-size: 18px;
+	font-size: 16px;
+	letter-spacing: -1px;
 	font-weight: 200;
-	color: #000;
 	text-decoration: none;
+	color:#4D4D4D;
+	text-transform: uppercase;
 }
 
 .login:hover {
@@ -22,13 +24,15 @@ body, .jumbotron, .container {
 }
 
 .logo {
-	font-size: 18px;
+	font-size:40px;
 	color: #000;
 	display: block;
 	float: left;
 	text-decoration:none;
 	font-weight: bold;
 	margin-left: 6%;
+	font-family: 'Kaushan Script', cursive;
+	color:#4D4D4D;
 }
 
 form {
