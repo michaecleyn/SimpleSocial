@@ -39,7 +39,7 @@
 								<td><%= post.scheduled_at.localtime.strftime("%B, %d, %I:%M %p") %></td>
 								<td><%= link_to "Edit", edit_post_path(post) %></td>
 								<td><%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %></td>
-								<td><%= link_to "Share Now", tweet_now_path, method: :post %></td>
+								<td><%= link_to "Share Now", tweet_now_path(status: post.status), method: :post %></td>
 							</tr>
 						<% end %>
 					<% end %>

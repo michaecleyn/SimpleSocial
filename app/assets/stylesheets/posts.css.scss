@@ -1,3 +1,27 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sharenow {
+	float:left;
+	width:100%;
+	background:white;
+	color:black;
+	transition:all 1s;
+}
+
+.or_split {
+	text-align:center;
+}
+
+.or {
+  display: inline-block;
+  margin: 12px 0 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.entry_title {
+	font-size: 15px;
+	color:black;
+}

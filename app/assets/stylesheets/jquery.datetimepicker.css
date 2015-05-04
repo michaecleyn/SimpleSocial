@@ -543,3 +543,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8fa', endColorstr='#FFF',GradientType=0 );
   /* IE6-9 */
 }
+
+::-webkit-input-placeholder {
+   color: white !important;
+}
