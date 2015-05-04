@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   # 	dashboard path
   # end
 
-  def after_sign_out_path_for(user)
-  	 put path here
-  end
+  # def after_sign_out_path_for(user)
+  # end
 end
