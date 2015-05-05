@@ -18,13 +18,11 @@
 
 .wrapper {
 	width:86%;
-	/*border:1px solid black;*/
 	margin:0 auto;
 	clear:both;
 }
 
 .field {
-	/*border:1px solid green;*/
 	width: 50%;
 	margin-top: 100px;
 	float:left;
@@ -32,7 +30,6 @@
 }
 
 .analytics {
-	/*border:1px solid black;*/
 	width:50%;
 	float:left;
 	margin-top: 100px;
@@ -58,6 +55,12 @@ h2 {
 	font-size:20px;
 	line-height:5em;
 	font-weight:100;
-	color:#444;
 	margin-top:50px;
+}
+
+h1 {
+	color:#4D4D4D;
+	font-family: 'Karla', sans-serif;
+	letter-spacing: -1px;
+	font-size:38px;
 }
