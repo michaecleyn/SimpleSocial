@@ -44,6 +44,8 @@ class PostsController < ApplicationController
     post = Post.new status: @status, user_id: current_user.id, scheduled_date: params[:date]
     post.save
 
+    flash[:notice] = "Awesome, you've scheduled your tweet"
+
     redirect_to dashboard_path
   end
 
@@ -54,7 +56,6 @@ class PostsController < ApplicationController
   def create
     @feed = Feedjira::Feed.fetch_and_parse params[:url]
     @entries = @feed.entries
-
     # @entries.each do |entry|
     #   @post = Post.new status: "#{entry.title}, #{entry.url}"
     #   @post.save
